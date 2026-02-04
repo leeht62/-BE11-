@@ -33,7 +33,7 @@ public class Main {
           Talk as=al.get(i);
           System.out.println((i+1)+" / "+as.author+" / "+ as.content);
         }
-      }else if(a.contains("삭제?id=")){
+      }else if(a.startsWith("삭제?id=")){
         int m=Integer.parseInt(a.substring(6));
         boolean delete=false;
 
@@ -48,7 +48,7 @@ public class Main {
         if(!delete){
           System.out.println(m+"번 명언은 존재하지 않습니다.");
         }
-      }else if(a.contains("수정?id=")) {
+      }else if(a.startsWith("수정?id=")) {
         int m=Integer.parseInt(a.substring(6));
         for(int i=0;i<al.size();i++){
           if(al.get(i).id==m){
